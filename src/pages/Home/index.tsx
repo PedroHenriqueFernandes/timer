@@ -42,14 +42,14 @@ export function Home() {
     },
   });
 
-  const { handleSubmit, watch,reset } = newCycleForm;
+  const { handleSubmit, watch, reset } = newCycleForm;
 
   const task = watch("task");
   const isSubmitDisabled = !task;
 
-  function handleCreateNewCycle(data: newCycleFormData){
-    createNewCycle(data)
-    reset()
+  function handleCreateNewCycle(data: newCycleFormData) {
+    createNewCycle(data);
+    reset();
   }
 
   return (
