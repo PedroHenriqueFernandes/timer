@@ -42,14 +42,19 @@ export function Home() {
     },
   });
 
-  const { handleSubmit, watch } = newCycleForm; // reset
+  const { handleSubmit, watch,reset } = newCycleForm;
 
   const task = watch("task");
   const isSubmitDisabled = !task;
 
+  function handleCreateNewCycle(data: newCycleFormData){
+    createNewCycle(data)
+    reset()
+  }
+
   return (
     <HomeContainer>
-      <form onSubmit={handleSubmit(createNewCycle)} action="">
+      <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
         <FormProvider {...newCycleForm}>
           <NewCycleForm />
         </FormProvider>
